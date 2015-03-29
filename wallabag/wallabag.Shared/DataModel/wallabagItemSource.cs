@@ -163,9 +163,9 @@ namespace wallabag.DataModel
 
             foreach (string param in parameters) // perform the following step for each of the parameters (home, fav, archive)
             {
-                Uri feedUri = new Uri(buildUrl(param));
                 try
                 {
+                    Uri feedUri = new Uri(buildUrl(param));
                     SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri);
 
                     if (feed.Items != null && feed.Items.Count > 0)
